@@ -7,9 +7,9 @@ plugins {
   id("net.minecrell.plugin-yml.bukkit") version "0.5.2" // Generates plugin.yml
 }
 
-group = "io.papermc.paperweight"
+group = "dev.cgs"
 version = "1.0.0-SNAPSHOT"
-description = "Test plugin for paperweight-userdev"
+description = "Stops a minecart when a player exits."
 
 java {
   // Configure the java toolchain. This allows gradle to auto-provision JDK 17 on systems that only have JDK 8 installed for example.
@@ -57,7 +57,7 @@ tasks {
 // Configure plugin.yml generation
 bukkit {
   load = BukkitPluginDescription.PluginLoadOrder.STARTUP
-  main = "io.papermc.paperweight.testplugin.TestPlugin"
+  main = "dev.cgs.minecartstopper.MinecartStopper"
   apiVersion = "1.18"
   authors = listOf("Author")
 }

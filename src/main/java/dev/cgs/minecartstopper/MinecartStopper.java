@@ -14,8 +14,10 @@ public final class MinecartStopper extends JavaPlugin implements Listener {
   @EventHandler
   public void onExitMinecart(VehicleExitEvent e) {
     if(e.getExited() instanceof Player && e.getVehicle() instanceof Minecart) {
-      e.getVehicle().setVelocity(new Vector(0, 0, 0));
-      ((Minecart)e.getVehicle()).setMaxSpeed(0.4D);
+      if (((Player)e.getExited()).isSneaking()) {
+        e.getVehicle().setVelocity(new Vector(0, 0, 0));
+        ((Minecart)e.getVehicle()).setMaxSpeed(0.4D);
+      }
     }
   }
 
